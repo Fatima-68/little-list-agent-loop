@@ -5,3 +5,5 @@ __pycache__/
 data/*.db
 *.pyc
 work/
+
+.pytest_tmp/
