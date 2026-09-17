@@ -11,7 +11,7 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-Open `http://127.0.0.1:8000`. Todos persist to `data/little_list.db`; set `TODO_DATABASE` to use another SQLite file.
+Open `http://127.0.0.1:8001`. Todos persist to `data/little_list.db`; set `TODO_DATABASE` to use another SQLite file.
 
 ## Development loop
 
