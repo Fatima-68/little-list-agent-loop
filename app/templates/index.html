@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f1e9" />
+    <title>little list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div class="page-frame">
+        <header class="topbar">
+          <a class="brand" href="/" aria-label="Little List home"><span class="brand-mark">✓</span><span>little list</span></a>
+          <div class="topbar-note"><span class="status-dot"></span><span>saved, quietly</span></div>
+        </header>
+        <section class="intro-grid">
+          <div class="intro-copy">
+            <p class="eyebrow"><span aria-hidden="true">◷</span> <time id="today"></time></p>
+            <h1>A little room<br /><em>to get things done.</em></h1>
+            <p class="intro-text">Keep the day light. Put the important things here, then let the rest wait.</p>
+          </div>
+          <aside class="progress-card" aria-label="Today’s progress">
+            <div class="progress-card-top"><div><span class="card-kicker">Today’s rhythm</span><strong id="progress-value">0%</strong></div><span class="progress-icon">✦</span></div>
+            <div class="progress-track" aria-label="0% complete"><span id="progress-bar"></span></div>
+            <p id="progress-copy">A fresh little list.</p>
+          </aside>
+        </section>
+        <section class="list-card" aria-label="Todo list">
+          <div class="list-header"><div><span class="section-label">Your list</span><h2 id="filter-heading">Everything</h2></div><span class="count-pill" id="open-count">0 open</span></div>
+          <form class="add-form" id="add-form"><span aria-hidden="true">＋</span><label class="sr-only" for="new-todo">Add a new task</label><input id="new-todo" maxlength="160" placeholder="What needs doing?" autocomplete="off" required /><button type="submit" aria-label="Add task">↗</button></form>
+          <div class="filters" role="tablist" aria-label="Filter tasks">
+            <button type="button" class="filter-button active" role="tab" aria-selected="true" data-filter="all">Everything</button>
+            <button type="button" class="filter-button" role="tab" aria-selected="false" data-filter="open">To do</button>
+            <button type="button" class="filter-button" role="tab" aria-selected="false" data-filter="done">Finished <span id="done-count" hidden>0</span></button>
+          </div>
+          <div class="todo-list" id="todo-list" aria-live="polite"></div>
+          <div class="list-footer"><span id="total-count">Start small.</span><button type="button" id="clear-completed" hidden>Clear finished</button><span class="footer-hint" id="saved-hint">Stored safely in SQLite</span></div>
+        </section>
+        <footer class="page-footer"><span>Make space for what matters.</span><span class="footer-rule" aria-hidden="true"></span><span>little list / 01</span></footer>
+      </div>
+    </main>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

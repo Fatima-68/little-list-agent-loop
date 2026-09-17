@@ -1,0 +1,24 @@
+name: AI PR review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    # Prevent exposing API credentials to code from an untrusted fork.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: >-
+            Review this PR for correctness, API regressions, SQLite safety, test gaps,
+            and dead code. Post actionable findings. Approve only if there are no
+            blocking issues; otherwise request changes. Do not modify code.

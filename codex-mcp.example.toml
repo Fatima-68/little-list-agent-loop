@@ -1,0 +1,4 @@
+[mcp_servers.little-list]
+command = "py"
+args = ["little_list_mcp.py"]
+cwd = "."
