@@ -60,3 +60,6 @@ Then ask the same question. Both answers are grounded in the same live source.
 ## Scope and honest limits
 
 The full ticket-to-PR-to-CI-to-review-to-auto-merge loop is configured, but it needs a real GitHub repository with branch protection and secrets plus a Linear workspace to execute. Linear's interactive MCP connection is used for the demonstrated agent work; the tiny API helper is used for dependable non-interactive post-merge status changes. With more time, I would add a protected post-merge Linear workflow, PR-to-ticket identifier validation, and a persisted decision log for the planner/auditor agents.
+## Development Workflow
+
+Changes are developed on feature branches and merged into main through pull requests.
