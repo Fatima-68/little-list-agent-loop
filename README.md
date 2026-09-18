@@ -63,3 +63,5 @@ The full ticket-to-PR-to-CI-to-review-to-auto-merge loop is configured, but it n
 ## Development Workflow
 
 Changes are developed on feature branches and merged into main through pull requests.
+
+<!-- Claude review trigger -->
